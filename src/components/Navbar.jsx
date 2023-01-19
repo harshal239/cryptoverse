@@ -53,9 +53,9 @@ function Navbar() {
           <Menu.Item key="2" icon={<MoneyCollectOutlined />}>
             <Link to="/cryptocurrencies">Cryptocurrencies</Link>
           </Menu.Item>
-          <Menu.Item key="3" icon={<FundOutlined />}>
+          {/* <Menu.Item key="3" icon={<FundOutlined />}>
             <Link to="/exchanges">Exchanges</Link>
-          </Menu.Item>
+          </Menu.Item> */}
           <Menu.Item key="4" icon={<BulbOutlined />}>
             <Link to="/news">News</Link>
           </Menu.Item>

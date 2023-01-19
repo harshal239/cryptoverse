@@ -1,0 +1,112 @@
+{
+  "status": "success",
+  "data": {
+    "coin": {
+      "uuid": "razxDUgYGNAdQ",
+      "symbol": "ETH",
+      "name": "Ethereum",
+      "description": "<p>Ethereum (ETH) is a global, public decentralized blockchain designed to run peer-to-peer smart contracts. It allows developers to deploy all sorts of decentralized applications (Dapps), without the interference of third parties. Ethereum is also used for its own cryptocurrency ether. Ethereum is now the world&rsquo;s second-most valued cryptocurrency platform.</p>\n\n<h3>The goal of Ethereum</h3>\n\n<p>Ethereum is created as a blockchain platform on which other applications could be built on top of. Most of the online services, businesses and enterprises are built on a centralized system of governance. Ethereum aims to decentralize the existing client-server model; servers and clouds are replaced by so-called nodes, run by volunteers from all over the world. Ethereum&rsquo;s vision is that it would enable this same functionality to people anywhere around the world, enabling them to compete to offer services on top of this infrastructure.</p>\n\n<h3>Who built Ethereum</h3>\n\n<p>Ethereum was initially described in a white paper by Vitalik Buterin. In 2014, Buterin and the other co-founders launched a campaign where they sold ether (Ethereum tokens) to raise money to build their vision. Since the launch of the white paper in 2015, the platform has grown fast, and these days there are hundreds of developers involved.</p>\n",
+      "color": "#3C3C3D",
+      "iconUrl": "https://cdn.coinranking.com/rk4RKHOuW/eth.svg",
+      "websiteUrl": "https://www.ethereum.org",
+      "links": [
+        {
+          "name": "www.ethereum.org",
+          "type": "website",
+          "url": "https://www.ethereum.org"
+        },
+        {
+          "name": "etherscan.io",
+          "url": "https://etherscan.io/",
+          "type": "website"
+        },
+        {
+          "name": "bitcointalk.org",
+          "url": "https://bitcointalk.org/index.php?topic=428589.0",
+          "type": "bitcointalk"
+        },
+        {
+          "name": "ethereumproject",
+          "url": "https://facebook.com/ethereumproject",
+          "type": "facebook"
+        },
+        {
+          "name": "ethereum",
+          "url": "https://github.com/ethereum",
+          "type": "github"
+        },
+        {
+          "name": "ethereum",
+          "url": "https://www.reddit.com/r/ethereum/",
+          "type": "reddit"
+        },
+        {
+          "name": "ethtrader",
+          "url": "https://www.reddit.com/r/ethtrader/",
+          "type": "reddit"
+        },
+        {
+          "name": "ethereum",
+          "url": "https://twitter.com/ethereum",
+          "type": "twitter"
+        },
+        {
+          "name": "YouTube",
+          "url": "https://www.youtube.com/channel/UCNOfzGXD_C9YMYmnefmPH0g",
+          "type": "youtube"
+        }
+      ],
+      "supply": {
+        "confirmed": true,
+        "supplyAt": 1671545100,
+        "max": null,
+        "total": "122373866.2178",
+        "circulating": "122022947.38943672"
+      },
+      "numberOfMarkets": 2300,
+      "numberOfExchanges": 138,
+      "24hVolume": "37252877224",
+      "marketCap": "147792282264",
+      "fullyDilutedMarketCap": "148217309652",
+      "price": "1211.1843339823176",
+      "btcPrice": "0.07206047135086689",
+      "priceAt": 1671545040,
+      "change": "2.32",
+      "rank": 2,
+      "sparkline": [
+        "1183.5327323944389",
+        "1184.1891262333877",
+        "1177.9197182625005",
+        "1174.0793836069802",
+        "1173.8702193272695",
+        "1171.8315956214735",
+        "1174.1198800582904",
+        "1176.573541407541",
+        "1168.5579117762252",
+        "1167.8604898653223",
+        "1170.5241243665785",
+        "1180.202385728278",
+        "1186.037745603877",
+        "1189.8880263011715",
+        "1194.7208825953865",
+        "1205.9914432580904",
+        "1208.2557611440955",
+        "1209.9893292654317",
+        "1208.046183987267",
+        "1209.1535429718715",
+        "1209.5050399046504",
+        "1209.352664378459",
+        "1212.3931152583223",
+        "1213.9387223287592",
+        "1212.8417232523348"
+      ],
+      "allTimeHigh": { "price": "4896.8770886838465", "timestamp": 1636502400 },
+      "coinrankingUrl": "https://coinranking.com/coin/razxDUgYGNAdQ+ethereum-eth",
+      "tier": 1,
+      "lowVolume": false,
+      "listedAt": 1438905600,
+      "notices": null,
+      "tags": ["staking", "layer-1", "proof-of-work", "proof-of-stake"]
+    }
+  }
+}

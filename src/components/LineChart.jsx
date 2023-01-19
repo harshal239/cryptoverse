@@ -2,12 +2,14 @@ import React from "react";
 import { Chart as ChartJS, registerables } from "chart.js";
 import { Line } from "react-chartjs-2";
 import { Col, Row, Typography } from "antd";
+import moment from "moment/moment";
 
 const { Title } = Typography;
 
 ChartJS.register(...registerables);
 
 function LineChart({ coinHistory, currentPrice, coinName }) {
+  // console.log(coinHistory);
   const coinPrice = [];
   const coinTimestamp = [];
 
@@ -16,10 +18,12 @@ function LineChart({ coinHistory, currentPrice, coinName }) {
   }
 
   for (let i = 0; i < coinHistory?.data?.history?.length; i += 1) {
-    coinTimestamp.push(
-      new Date(coinHistory?.data?.history[i].timestamp).toLocaleDateString()
-    );
+    let timeStamp = coinHistory?.data?.history[i].timestamp;
+    let date = moment.unix(timeStamp).format("DD/MM/YYYY");
+    console.log(date);
+    coinTimestamp.push(date);
   }
+  console.log(coinTimestamp);
   const data = {
     labels: coinTimestamp,
     datasets: [

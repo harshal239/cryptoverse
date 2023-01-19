@@ -29,14 +29,14 @@ function CryptoDetails() {
   const { coinId } = useParams();
   const [timePeriod, setTimePeriod] = useState("7d");
   const { data, isFetching } = useGetCryptoDetailsQuery(coinId);
-  const { data: coinHistory, isFetching: iscoinHistoryFetching } =
+  const { data: coinHistory, isFetching: isCoinHistoryFetching } =
     useGetCryptoHistoryQuery({
       coinId,
       timePeriod,
     });
   const cryptoDetails = data?.data?.coin;
 
-  if (isFetching || iscoinHistoryFetching) {
+  if (isFetching || isCoinHistoryFetching) {
     return <Loader />;
   }
 
@@ -45,7 +45,7 @@ function CryptoDetails() {
   const stats = [
     {
       title: "Price to USD",
-      value: `$ ${cryptoDetails.price && millify(cryptoDetails.price)}`,
+      value: `$ ${cryptoDetails.price && millify(cryptoDetails?.price)}`,
       icon: <DollarCircleOutlined />,
     },
     { title: "Rank", value: cryptoDetails.rank, icon: <NumberOutlined /> },
@@ -78,7 +78,7 @@ function CryptoDetails() {
       icon: <MoneyCollectOutlined />,
     },
     {
-      title: "Aprroved Supply",
+      title: "Approved Supply",
       value: cryptoDetails.approvedSupply ? (
         <CheckOutlined />
       ) : (
@@ -88,12 +88,12 @@ function CryptoDetails() {
     },
     {
       title: "Total Supply",
-      value: `$ ${millify(cryptoDetails.totalSupply)}`,
+      value: `$ ${millify(cryptoDetails?.supply.total)}`,
       icon: <ExclamationCircleOutlined />,
     },
     {
       title: "Circulating Supply",
-      value: `$ ${millify(cryptoDetails.circulatingSupply)}`,
+      value: `$ ${millify(cryptoDetails?.supply.circulating)}`,
       icon: <ExclamationCircleOutlined />,
     },
   ];
@@ -102,7 +102,7 @@ function CryptoDetails() {
     <Col className="coin-detail-container">
       <Col className="coin-heading-container">
         <Title level={2} className="coin-name">
-          {cryptoDetails.name} ({cryptoDetails.slug}) Price
+          {cryptoDetails.name} ({cryptoDetails.symbol}) Price
         </Title>
         <p>
           {cryptoDetails.name} live price in US Dollars View value statistics,

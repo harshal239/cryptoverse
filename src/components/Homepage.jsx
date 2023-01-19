@@ -9,7 +9,7 @@ import Loader from "./Loader";
 const { Title } = Typography;
 
 function Homepage() {
-  const { data, isFetching } = useGetCryptosQuery(10);
+  const { data, isFetching, isLoading } = useGetCryptosQuery(10);
   const globalStats = data?.data?.stats;
 
   if (isFetching) {
