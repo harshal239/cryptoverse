@@ -8,8 +8,37 @@ const { Title } = Typography;
 
 ChartJS.register(...registerables);
 
-function LineChart({ coinHistory, currentPrice, coinName }) {
-  // console.log(coinHistory);
+const getFilteredTimestamps = (timestamps, selectedTimeframe) => {
+  let step;
+
+  switch (selectedTimeframe) {
+    case "3h":
+    case "24h":
+      step = 2;
+      break;
+    case "7d":
+    case "30d":
+      step = Math.floor(timestamps.length / 10);
+      break;
+    case "1y":
+    case "3m":
+    case "3y":
+    case "5y":
+      step = Math.floor(timestamps.length / 15);
+      break;
+    default:
+      step = 1;
+  }
+
+  return timestamps.filter((_, index) => index % step === 0);
+};
+
+function LineChart({
+  coinHistory,
+  currentPrice,
+  coinName,
+  selectedTimePeriod,
+}) {
   const coinPrice = [];
   const coinTimestamp = [];
 
@@ -17,15 +46,18 @@ function LineChart({ coinHistory, currentPrice, coinName }) {
     coinPrice.push(coinHistory?.data?.history[i].price);
   }
 
-  for (let i = 0; i < coinHistory?.data?.history?.length; i += 1) {
+  for (let i = 0; i < coinHistory?.data?.history?.length; i++) {
     let timeStamp = coinHistory?.data?.history[i].timestamp;
     let date = moment.unix(timeStamp).format("DD/MM/YYYY");
-    console.log(date);
     coinTimestamp.push(date);
   }
-  console.log(coinTimestamp);
+
+  const filteredTimestamps = getFilteredTimestamps(
+    coinTimestamp,
+    selectedTimePeriod
+  );
   const data = {
-    labels: coinTimestamp,
+    labels: filteredTimestamps,
     datasets: [
       {
         label: "Price In USD",

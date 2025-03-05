@@ -51,7 +51,9 @@ function CryptoDetails() {
     { title: "Rank", value: cryptoDetails.rank, icon: <NumberOutlined /> },
     {
       title: "24h Volume",
-      value: `$ ${cryptoDetails.volume && millify(cryptoDetails.volume)}`,
+      value: `$ ${
+        cryptoDetails["24hVolume"] && millify(cryptoDetails["24hVolume"])
+      }`,
       icon: <ThunderboltOutlined />,
     },
     {
@@ -113,6 +115,7 @@ function CryptoDetails() {
         defaultValue="7d"
         className="select-timeperiod"
         placeholder="Select time period"
+        value={timePeriod}
         onChange={(value) => setTimePeriod(value)}
       >
         {time.map((date) => (
@@ -123,6 +126,7 @@ function CryptoDetails() {
         coinHistory={coinHistory}
         currentPrice={millify(cryptoDetails.price)}
         coinName={cryptoDetails.name}
+        selectedTimePeriod={timePeriod}
       />
 
       <Col className="stats-container">

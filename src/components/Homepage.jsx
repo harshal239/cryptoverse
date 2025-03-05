@@ -9,7 +9,7 @@ import Loader from "./Loader";
 const { Title } = Typography;
 
 function Homepage() {
-  const { data, isFetching, isLoading } = useGetCryptosQuery(10);
+  const { data, isFetching } = useGetCryptosQuery(10);
   const globalStats = data?.data?.stats;
 
   if (isFetching) {
@@ -25,31 +25,31 @@ function Homepage() {
         <Col span={12}>
           <Statistic
             title="Total Cryptocurrencies"
-            value={millify(globalStats.total)}
+            value={millify(globalStats?.total || 0)}
           />
         </Col>
         <Col span={12}>
           <Statistic
             title="Total Exchanges"
-            value={millify(globalStats.totalExchanges)}
+            value={millify(globalStats?.totalExchanges || 0)}
           />
         </Col>
         <Col span={12}>
           <Statistic
             title="Total Market Cap"
-            value={millify(globalStats.totalMarketCap)}
+            value={millify(globalStats?.totalMarketCap || 0)}
           />
         </Col>
         <Col span={12}>
           <Statistic
             title="Total 24 hour volume"
-            value={millify(globalStats.total24hVolume)}
+            value={millify(globalStats?.total24hVolume || 0)}
           />
         </Col>
         <Col span={12}>
           <Statistic
             title="Total Markets"
-            value={millify(globalStats.totalMarkets)}
+            value={millify(globalStats?.totalMarkets || 0)}
           />
         </Col>
       </Row>
